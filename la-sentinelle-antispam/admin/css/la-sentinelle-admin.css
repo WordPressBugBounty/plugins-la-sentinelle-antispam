@@ -1,0 +1,29 @@
+
+/*
+ * CSS for the settingspage of La Sentinelle antispam.
+ */
+
+
+/* Menu Icon */
+#icon-la-sentinelle {
+	background-image: url('../images/icon-128x128.png');
+	background-repeat: no-repeat;
+	margin: 0 8px 0 10px;
+	float: left;
+	width: 56px;
+	height: 56px;
+	background-size: contain;
+}
+
+.lasent-nav-tab-wrapper {
+	clear: left;
+}
+
+/* Tabs */
+form.la_sentinelle_settingspage {
+	display: none;
+}
+
+form.la_sentinelle_settingspage.active {
+	display: block;
+}
