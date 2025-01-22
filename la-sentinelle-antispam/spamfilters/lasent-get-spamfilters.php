@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 function la_sentinelle_get_spamfilters( $nonce_action = 'default' ) {
 
 	$output = '
-		<div class="la-sentinelle-container" style="max-height:0;overflow:hidden;">
+		<div class="la-sentinelle-container" style="max-height:0;overflow:hidden;" hidden="true" aria-hidden="true">
 		';
 
 	$filters = range( 1, 6 );

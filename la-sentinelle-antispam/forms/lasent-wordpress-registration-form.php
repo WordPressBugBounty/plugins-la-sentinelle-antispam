@@ -187,7 +187,14 @@ function la_sentinelle_check_registration_form_edd() {
 			edd_die();
 		} else {
 			// Do a redirect and do not process any further. EDD will log the user in otherwise. The error gets shown after the redirect.
-			$redirect = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+			if ( is_ssl() ) {
+				$protocol = 'https://';
+			} else {
+				$protocol = 'http://';
+			}
+
+			$redirect = esc_url( $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
 			wp_safe_redirect( $redirect );
 			exit;
 		}

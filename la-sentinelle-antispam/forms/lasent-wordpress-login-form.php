@@ -107,7 +107,14 @@ function la_sentinelle_edd_authenticate( $data ) {
 	if ( ( is_array( $markers ) && ! empty( $markers ) ) || $marker_sfs === 'spam' ) {
 		la_sentinelle_add_statistic_blocked( 'wplogin' );
 		// Do a redirect and do not process any further. EDD will log the user in otherwise. The error gets shown after the redirect.
-		$redirect = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http' ) . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+		if ( is_ssl() ) {
+			$protocol = 'https://';
+		} else {
+			$protocol = 'http://';
+		}
+
+		$redirect = esc_url( $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
 		wp_safe_redirect( $redirect );
 		exit;
 	}

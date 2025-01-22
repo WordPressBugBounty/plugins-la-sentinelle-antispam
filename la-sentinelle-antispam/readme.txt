@@ -2,8 +2,8 @@
 Contributors: mpol
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
-Tested up to: 6.6
-Stable tag: 3.1.0
+Tested up to: 6.7
+Stable tag: 3.1.1
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -142,6 +142,13 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 3.1.1 =
+* 2025-01-22
+* Fix XSS security issue with EDD forms (thanks Peter Thaleikis).
+* Hide invisible elements for screenreaders.
+* Loading plugin translations should be delayed until init action.
+* Use __DIR__ instead of dirname(__FILE__).
 
 = 3.1.0 =
 * 2024-07-12

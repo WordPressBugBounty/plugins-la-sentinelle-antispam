@@ -30,7 +30,7 @@ function la_sentinelle_admin_enqueue() {
  * @since 1.0.0
  */
 function la_sentinelle_links( $links, $file ) {
-	if ( $file === plugin_basename( dirname(__FILE__) . '/la-sentinelle.php' ) ) {
+	if ( $file === plugin_basename( __DIR__ . '/la-sentinelle.php' ) ) {
 		$links[] = '<a href="' . admin_url( 'options-general.php?page=la-sentinelle.php' ) . '">' . esc_html__( 'Settings', 'la-sentinelle-antispam' ) . '</a>';
 	}
 	return $links;
@@ -103,6 +103,8 @@ add_action( 'wp_initialize_site', 'la_sentinelle_wp_initialize_site' );
  * @since 1.0.0
  */
 function la_sentinelle_load_lang() {
+
 	load_plugin_textdomain( 'la-sentinelle-antispam', false, LASENT_FOLDER . '/lang' );
+
 }
-add_action('plugins_loaded', 'la_sentinelle_load_lang');
+add_action( 'init', 'la_sentinelle_load_lang' );

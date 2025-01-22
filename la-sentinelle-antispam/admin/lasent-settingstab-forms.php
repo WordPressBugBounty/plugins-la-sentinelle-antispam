@@ -214,7 +214,9 @@ function la_sentinelle_settingstab_forms() {
 						</label><br />
 						<span class="setting-description">
 							<?php
-							esc_html_e( 'Enabling this setting will add La Sentinelle antispam fields to every Forminator form.', 'la-sentinelle-antispam' ); echo '<br />';
+							esc_html_e( 'Enabling this setting will add La Sentinelle antispam fields to every Forminator form.', 'la-sentinelle-antispam' ); echo '<br /><br />';
+							esc_html_e( 'Please go to Behaviour tab and disable AJAX for the forms you want protected.', 'la-sentinelle-antispam' ); echo '<br /><br />';
+							esc_html_e( 'Also, it might be that you need to switch submission of the form from AJAX to Page Reload or vice versa.', 'la-sentinelle-antispam' ); echo '<br />';
 							?>
 						</span>
 					</td>
