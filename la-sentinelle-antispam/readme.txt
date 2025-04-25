@@ -2,7 +2,7 @@
 Contributors: mpol
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
-Tested up to: 6.7
+Tested up to: 6.8
 Stable tag: 3.1.1
 License: GPLv2 or later
 Requires PHP: 7.0
