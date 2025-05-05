@@ -3,7 +3,7 @@ Contributors: mpol
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
 Tested up to: 6.8
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -142,6 +142,10 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 3.1.2 =
+* 2025-05-05
+* Fix versioning warning For Contact Form 7 (thanks @grynge and @bonaldi).
 
 = 3.1.1 =
 * 2025-01-22

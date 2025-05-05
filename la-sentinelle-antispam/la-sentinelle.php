@@ -3,7 +3,7 @@
 Plugin Name: La Sentinelle antispam
 Plugin URI: https://wordpress.org/plugins/la-sentinelle-antispam/
 Description: Feel safe knowing that your website is safe from spam. La Sentinelle will guard your WordPress website against spam in a simple and effective way.
-Version: 3.1.1
+Version: 3.1.2
 Author: Marcel Pol
 Author URI: https://timelord.nl
 License: GPLv2 or later
@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 // Plugin Version
-define('LASENT_VER', '3.1.1');
+define('LASENT_VER', '3.1.2');
 
 
 /*

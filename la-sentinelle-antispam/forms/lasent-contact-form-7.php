@@ -102,9 +102,10 @@ function la_sentinelle_wpcf7_formtag_generator() {
 
 	if ( class_exists('WPCF7_TagGenerator') ) {
 		$tag_generator = WPCF7_TagGenerator::get_instance();
-		$tag_generator->add( 'la_sentinelle', esc_html__( 'La Sentinelle antispam', 'la-sentinelle-antispam' ), 'la_sentinelle_wpcf7_formtag_pane' );
+		//add( $id, $title, $callback, $options = '' ) {
+		$tag_generator->add( 'la_sentinelle', esc_html__( 'La Sentinelle antispam', 'la-sentinelle-antispam' ), 'la_sentinelle_wpcf7_formtag_pane', array( 'version' => 2 ) );
 	} else if ( function_exists('wpcf7_add_tag_generator') ) {
-		wpcf7_add_tag_generator( 'la_sentinelle', esc_html__( 'La Sentinelle antispam', 'la-sentinelle-antispam' ), 'la_sentinelle_wpcf7_formtag_pane', 'la_sentinelle_wpcf7_formtag_pane' );
+		wpcf7_add_tag_generator( 'la_sentinelle', esc_html__( 'La Sentinelle antispam', 'la-sentinelle-antispam' ), 'la_sentinelle_wpcf7_formtag_pane_v1', 'la_sentinelle_wpcf7_formtag_pane_v1' );
 	}
 
 }
@@ -114,45 +115,62 @@ add_action( 'wpcf7_admin_init', 'la_sentinelle_wpcf7_formtag_generator', 35 );
 /*
  * Tag generator; add popup pane for the CF7 form editor.
  *
- * @since 1.0.0
+ * @since 3.1.2
  */
 function la_sentinelle_wpcf7_formtag_pane( $contact_form, $args = '' ) {
-	if (class_exists('WPCF7_TagGenerator')) {
-		$args = wp_parse_args( $args, array() );
-		/* translators: %s is a link to the settingspage with the description of the tag. */
-		$description = esc_html__( 'Generate a form-tag for antispamfilter fields. For more details, see %s.', 'la-sentinelle-antispam' );
-		$desc_link = '<a href="' . admin_url( 'options-general.php?page=la-sentinelle.php' ) . '">' . esc_html__( 'Settings for La Sentinelle', 'la-sentinelle-antispam' ) . '</a>';
+
+	$args = wp_parse_args( $args, array() );
+	/* translators: %s is a link to the settingspage with the description of the tag. */
+	$description = esc_html__( 'Generate a form-tag for antispamfilter fields. For more details, see %s.', 'la-sentinelle-antispam' );
+	$desc_link = '<a href="' . admin_url( 'options-general.php?page=la-sentinelle.php' ) . '">' . esc_html__( 'Settings for La Sentinelle', 'la-sentinelle-antispam' ) . '</a>';
+
+	$tag = new WPCF7_TagGeneratorGenerator( $args['content'] );
+	?>
+	<header class="description-box">
+		<p>
+			<legend><?php printf( esc_html( $description ), $desc_link ); ?></legend>
+		</p>
+	</header>
+
+	<div class="control-box">
+		<?php
+		$tag->print(
+			'field_type',
+			array(
+				'select_options' => array(
+					'la_sentinelle' => __( 'La sentinelle', 'la-sentinelle-antispam' ),
+				)
+			)
+		);
+
+		$tag->print( 'field_name' );
+
+		$tag->print( 'id_attr' );
+
+		$tag->print( 'class_attr' );
+
 		?>
-		<div class="control-box">
-			<fieldset>
-				<legend><?php printf( esc_html( $description ), $desc_link ); ?></legend>
+	</div>
 
-				<table class="form-table"><tbody>
-					<tr>
-						<th scope="row">
-							<label for="<?php echo esc_attr( $args['content'] . '-name' ); ?>"><?php echo esc_html__( 'Name', 'la-sentinelle-antispam' ); ?></label>
-						</th>
-						<td>
-							<input type="text" name="name" class="tg-name oneline" id="<?php echo esc_attr( $args['content'] . '-name' ); ?>" /><br>
-						</td>
-					</tr>
+	<footer class="insert-box">
+		<?php
+			$tag->print( 'insert_box_content' );
+		?>
+	</footer>
 
-				</tbody></table>
-			</fieldset>
-		</div>
+	<?php
+}
 
-		<div class="insert-box">
-			<input type="text" name="la_sentinelle" class="tag code" readonly="readonly" onfocus="this.select()" />
 
-			<div class="submitbox">
-				<input type="button" class="button button-primary insert-tag" value="<?php echo esc_attr__( 'Insert Tag', 'la-sentinelle-antispam' ); ?>" />
-			</div>
+/*
+ * Tag generator; add popup pane for the CF7 form editor.
+ *
+ * @since 1.0.0
+ */
+function la_sentinelle_wpcf7_formtag_pane_v1( $contact_form, $args = '' ) {
 
-			<br class="clear" />
-		</div>
-
-	<?php } else { ?>
-
+	if ( function_exists('wpcf7_add_tag_generator') ) {
+		?>
 		<div id="wpcf7-tg-pane-la_sentinelle" class="hidden">
 			<form action="">
 				<table>
@@ -172,6 +190,7 @@ function la_sentinelle_wpcf7_formtag_pane( $contact_form, $args = '' ) {
 			</form>
 		</div>
 	<?php }
+
 }
 
 
