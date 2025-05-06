@@ -3,7 +3,7 @@ Contributors: mpol
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
 Tested up to: 6.8
-Stable tag: 3.1.2
+Stable tag: 4.0.0
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -142,6 +142,10 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 4.0.0 =
+* 2025-05-06
+* Remove jQuery dependency (thanks mediaformat).
 
 = 3.1.2 =
 * 2025-05-05

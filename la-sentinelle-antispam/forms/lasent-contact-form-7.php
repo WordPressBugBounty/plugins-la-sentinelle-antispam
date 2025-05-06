@@ -138,7 +138,7 @@ function la_sentinelle_wpcf7_formtag_pane( $contact_form, $args = '' ) {
 			'field_type',
 			array(
 				'select_options' => array(
-					'la_sentinelle' => __( 'La sentinelle', 'la-sentinelle-antispam' ),
+					'la_sentinelle' => __( 'La Sentinelle', 'la-sentinelle-antispam' ),
 				)
 			)
 		);

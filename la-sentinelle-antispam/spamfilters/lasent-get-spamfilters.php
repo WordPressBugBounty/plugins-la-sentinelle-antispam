@@ -56,7 +56,7 @@ function la_sentinelle_get_spamfilters( $nonce_action = 'default' ) {
  */
 function la_sentinelle_enqueue() {
 
-	wp_register_script( 'la_sentinelle_frontend_js', plugins_url('js/la-sentinelle-frontend.js', __FILE__), array( 'jquery' ), LASENT_VER, true );
+	wp_register_script( 'la_sentinelle_frontend_js', plugins_url('js/la-sentinelle-frontend.js', __FILE__), array(), LASENT_VER, true );
 	$data_to_be_passed = array(
 		'ajaxurl'   => esc_url( admin_url('admin-ajax.php') ),
 		'ajax2'     => la_sentinelle_get_field_name( 'ajax2' ),
@@ -84,9 +84,6 @@ add_action( 'admin_enqueue_scripts', 'la_sentinelle_enqueue' );
  * @since 1.0.0
  */
 function la_sentinelle_dead_enqueue() {
-
-	$url = get_bloginfo('wpurl') . '/wp-includes/js/jquery/jquery.js?ver=' . LASENT_VER;
-	echo "<script type='text/javascript' src='" . esc_attr( $url ) . "'></script>";
 
 	$url = LASENT_URL . 'spamfilters/js/la-sentinelle-frontend.js?ver=' . LASENT_VER;
 	echo "<script type='text/javascript' src='" . esc_attr( $url ) . "'></script>";

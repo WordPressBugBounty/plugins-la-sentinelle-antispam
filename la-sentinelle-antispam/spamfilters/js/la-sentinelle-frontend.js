@@ -2,7 +2,7 @@
  * JavaScript for La Sentinelle antispam.
  *
 
-Copyright 2018 - 2024  Marcel Pol  (email: marcel@timelord.nl)
+Copyright 2018 - 2025  Marcel Pol  (email: marcel@timelord.nl)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,43 +25,44 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  * @since 1.0.0
  */
-jQuery(document).ready(function($) {
-	jQuery( 'form' ).each( function( index, form ) {
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll('form')?.forEach(init_honeypot);
+
+	function init_honeypot(form) {
 
 		var honeypot  = la_sentinelle_frontend_script.honeypot;
 		var honeypot2 = la_sentinelle_frontend_script.honeypot2;
 
-		var honeypot_val = parseInt( jQuery( 'input.' + honeypot, form ).val(), 10 );
-		var honeypot2_val = parseInt( jQuery( 'input.' + honeypot2, form ).val(), 10 );
+		var honeypot_val = parseInt( form.querySelector(`input.${honeypot}`)?.value, 10 );
+		var honeypot2_val = parseInt( form.querySelector(`input.${honeypot2}`)?.value, 10 );
 
 		if ( ! isNaN( honeypot_val ) && (typeof honeypot_val != "undefined") && (typeof honeypot2_val != "undefined") ) {
 			la_sentinelle_honeypot( form );
 		}
-
-	});
+	}
 
 	// Hook into this.reset for Contact Form 7.
-	jQuery('form.wpcf7-form').on('reset', function() {
-
+	document.querySelector('form.wpcf7-form')?.addEventListener('reset', function() {
 		var form = this;
 		setTimeout(function() {
-				la_sentinelle_honeypot( form );
-			}, 500 );
-
+			la_sentinelle_honeypot( form );
+		}, 500 );
 	});
+
 });
+
 function la_sentinelle_honeypot( form ) {
 
 	var honeypot  = la_sentinelle_frontend_script.honeypot;
 	var honeypot2 = la_sentinelle_frontend_script.honeypot2;
 
-	var honeypot_val = parseInt( jQuery( 'input.' + honeypot, form ).val(), 10 );
-	var honeypot2_val = parseInt( jQuery( 'input.' + honeypot2, form ).val(), 10 );
+	var honeypot_val = parseInt( form.querySelector(`input.${honeypot}`).value, 10 );
+	var honeypot2_val = parseInt( form.querySelector(`input.${honeypot2}`).value, 10 );
 
 	if ( ! isNaN( honeypot_val ) && (typeof honeypot_val != "undefined") && (typeof honeypot2_val != "undefined") ) {
 		if ( honeypot_val > 0 ) {
-			jQuery( 'input.' + honeypot2, form ).val( honeypot_val );
-			jQuery( 'input.' + honeypot, form ).val( '' );
+			form.querySelector(`input.${honeypot2}`).value = honeypot_val;
+			form.querySelector(`input.${honeypot}`).value = '';
 		}
 	}
 }
@@ -72,14 +73,14 @@ function la_sentinelle_honeypot( form ) {
  *
  * @since 1.0.0
  */
-jQuery(document).ready(function($) {
-	jQuery( 'form' ).each( function( index, form ) {
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll('form')?.forEach( function(form) {
 
 		var timeout  = la_sentinelle_frontend_script.timeout;
 		var timeout2 = la_sentinelle_frontend_script.timeout2;
 
-		var timer  = parseInt( jQuery( 'input.' + timeout, form ).val(), 10 );
-		var timer2 = parseInt( jQuery( 'input.' + timeout2, form ).val(), 10 );
+		var timer  = parseInt( form.querySelector(`input.${timeout}`)?.value, 10 );
+		var timer2 = parseInt( form.querySelector(`input.${timeout2}`)?.value, 10 );
 
 		if ( ! isNaN( timer ) && ! isNaN( timer2 ) && (typeof timer != "undefined") && (typeof timer2 != "undefined") ) {
 
@@ -95,31 +96,29 @@ jQuery(document).ready(function($) {
 	});
 
 	// Hook into this.reset for Contact Form 7.
-	jQuery('form.wpcf7-form').on('reset', function() {
-
+	document.querySelector('form.wpcf7-form')?.addEventListener('reset', function() {
 		var form = this;
 		setTimeout(function() {
-				la_sentinelle_timeout( form );
-			}, 500 );
-
+			la_sentinelle_timeout( form );
+		}, 500 );
 	});
-
 });
+
 function la_sentinelle_timeout( form ) {
 
 	var timeout  = la_sentinelle_frontend_script.timeout;
 	var timeout2 = la_sentinelle_frontend_script.timeout2;
 
-	var timer  = parseInt( jQuery( 'input.' + timeout, form ).val(), 10 );
-	var timer2 = parseInt( jQuery( 'input.' + timeout2, form ).val(), 10 );
+	var timer  = parseInt( form.querySelector(`input.${timeout}`).value, 10 );
+	var timer2 = parseInt( form.querySelector(`input.${timeout2}`).value, 10 );
 
 	if ( ! isNaN( timer ) && ! isNaN( timer2 ) && (typeof timer != "undefined") && (typeof timer2 != "undefined") ) {
 
 		var timer  = timer - 1;
 		var timer2 = timer2 + 1;
 
-		jQuery( 'input.' + timeout, form ).val( timer );
-		jQuery( 'input.' + timeout2, form ).val( timer2 );
+		form.querySelector(`input.${timeout}`).value = timer;
+		form.querySelector(`input.${timeout2}`).value = timer2;
 
 	}
 
@@ -131,34 +130,35 @@ function la_sentinelle_timeout( form ) {
  *
  * @since 3.0.0
  */
-jQuery(document).ready(function($) {
-	jQuery( 'form' ).each( function( index, form ) {
-
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll('form')?.forEach( (form) => {
 		var ajax2_field  = la_sentinelle_frontend_script.ajax2;
 		var ajax3_field  = la_sentinelle_frontend_script.ajax3;
-		var ajax2_val = parseInt( jQuery( 'input.' + ajax2_field, form ).val(), 10 );
+		var ajax2_val = parseInt( form.querySelector(`input.${ajax2_field}`)?.value, 10 );
 
 		if ( (typeof ajax2_val !== 'undefined') && ( ! isNaN( ajax2_val ) ) && ajax2_val > 0 ) {
 
-			var ajax3_val  = jQuery( 'input.' + ajax3_field, form ).val();
+			var ajax3_val = form.querySelector(`input.${ajax3_field}`).value;
 
 			// Set up data to send
 			var ajaxurl  = la_sentinelle_frontend_script.ajaxurl;
-			var data     = {
+			var data     = new URLSearchParams({
 				action: 'la_sentinelle_ajax',
 				ajax2: ajax2_val,
 				ajax3: ajax3_val
-			};
-
-			jQuery.post( ajaxurl, data, function( response ) {
-
-				response = response.trim();
-				//console.log( response ); // debug: should say 'reported' if we got what we wanted.
-
 			});
 
-		}
+			var request = new XMLHttpRequest();
 
+			request.open('POST', ajaxurl, true);
+			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;');
+			request.onload = function () {
+				response = this.response.trim();
+				// console.log( response ); // debug: should say 'reported' if we got what we wanted.
+			};
+			request.send(data.toString());
+
+		}
 	});
 });
 
@@ -168,21 +168,21 @@ jQuery(document).ready(function($) {
  *
  * @since 3.0.0
  */
-jQuery(document).ready(function($) {
-	jQuery( 'form' ).each( function( index, form ) {
+document.addEventListener("DOMContentLoaded", () => {
+	document.querySelectorAll('form')?.forEach(function(form, index) {
 
-		var canvas_element = jQuery('<canvas />').attr({
-			id: 'canvas-' + index,
-			width: 20,
-			height: 20
-		});
+		var canvas_element = document.createElement('canvas');
+		canvas_element.id = 'canvas-' + index;
+		canvas_element.width = 20;
+		canvas_element.height = 20;
 
-		var returnvalue = jQuery( 'div.la-sentinelle-container', form ).append( canvas_element );
-		if ( typeof returnvalue[0] === "undefined" ) {
+		var returnvalue = form.querySelector('div.la-sentinelle-container')?.appendChild( canvas_element );
+
+		if ( typeof returnvalue === "undefined" ) {
 			// No sentinelle in this form.
-			//console.log( 'undefined' );
+			// console.log( 'undefined' );
 		} else {
-			//console.log( 'defined' );
+			// console.log( 'defined' );
 
 			var canvas = document.querySelector( '#canvas-' + index );
 			var gl = canvas.getContext( 'webgl' );
@@ -198,7 +198,7 @@ jQuery(document).ready(function($) {
 			);
 
 			var webgl  = la_sentinelle_frontend_script.webgl;
-			var webgl_val = parseInt( jQuery( 'input.' + webgl, form ).val(), 10 );
+			var webgl_val = parseInt( form.querySelector(`input.${webgl}`).value, 10 );
 
 			if ( (typeof webgl_val != 'undefined') ) {
 				if ( webgl_val > 0 ) {
@@ -315,31 +315,32 @@ jQuery(document).ready(function($) {
 				var webgl2_val = pixels[0];
 				var webgl2_field  = la_sentinelle_frontend_script.webgl2;
 				var webgl3_field  = la_sentinelle_frontend_script.webgl3;
-				jQuery( 'input.' + webgl2_field, form ).val( webgl2_val );
-				var webgl3_val  = jQuery( 'input.' + webgl3_field, form ).val();
+				form.querySelector(`input.${webgl2_field}`).value = webgl2_val;
+				var webgl3_val = form.querySelector(`input.${webgl3_field}`).value;
 
 				// Set up data to send
 				var ajaxurl  = la_sentinelle_frontend_script.ajaxurl;
-				var data     = {
+				var data     = new URLSearchParams({
 					action: 'la_sentinelle_webgl',
 					webgl2: webgl2_val,
 					webgl3: webgl3_val
-				};
+				});
 
-				jQuery.post( ajaxurl, data, function( response ) {
+				var request = new XMLHttpRequest();
 
-					response = response.trim();
+				request.open('POST', ajaxurl, true);
+				request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;');
+				request.onload = function () {
+					response = this.response.trim();
 					if ( response === 'reported' ) { // We got what we wanted
 						//console.log( 'reported' );
 					} else {
 						//console.log( 'not reported' );
 					}
-
-				});
+				};
+				request.send(data);
 
 			}
-
 		}
-
 	});
 });
