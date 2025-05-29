@@ -3,11 +3,17 @@
 
 /*
  * Add fields to forminator form.
+ * This is with normal non-ajax load of the form.
+ *
+ * Do not use a second parameter $buuton, as it will crash the Paypal button renderer.
+ * Reference: https://wordpress.org/support/topic/forminator-form-does-not-work-with-paypal-field-because-of-la-sentinelle/
+ *
+ * @param $html the rendered html.
  *
  * @since 3.1.0
  *
  */
-function lasent_forminator_render_button_markup( $html, $button ) {
+function lasent_forminator_render_button_markup( $html ) {
 
 	$elements = la_sentinelle_get_spamfilters();
 
@@ -15,7 +21,7 @@ function lasent_forminator_render_button_markup( $html, $button ) {
 
 }
 if (get_option( 'la_sentinelle-forminator', 'true') === 'true') {
-	add_action( 'forminator_render_button_markup', 'lasent_forminator_render_button_markup', 10, 2 );
+	add_action( 'forminator_render_button_markup', 'lasent_forminator_render_button_markup', 10, 1 );
 }
 
 

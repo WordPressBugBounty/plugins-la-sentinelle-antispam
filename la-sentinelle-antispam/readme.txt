@@ -1,9 +1,9 @@
 === La Sentinelle antispam ===
-Contributors: mpol
+Contributors: mpol, mediaformat, grynge, bonaldi, delanthear, lamachinedigitale, misterpo, riceooks, ntodo
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
 Tested up to: 6.8
-Stable tag: 4.0.0
+Stable tag: 4.0.1
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -142,6 +142,11 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 4.0.1 =
+* 2025-05-29
+* Fix Paypal button in Forminator forms.
+* Fix WebGL spamfilter with CF7 refill.
 
 = 4.0.0 =
 * 2025-05-06

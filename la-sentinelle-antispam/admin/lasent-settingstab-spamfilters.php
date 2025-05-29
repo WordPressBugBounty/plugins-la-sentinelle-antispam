@@ -57,9 +57,9 @@ function la_sentinelle_settingstab_spamfilters() {
 					<?php
 					esc_html_e('This will add a Nonce to the form. It is a way to check for a human user. If it does not validate, the entry will be marked as spam.', 'la-sentinelle-antispam');
 					echo '<br />';
-					$link_wp = '<a href="https://codex.wordpress.org/Wordpress_Nonce_Implementation" target="_blank">';
+					$link_wp = '<a href="https://developer.wordpress.org/apis/security/nonces/" target="_blank">';
 					/* translators: %1$s and %2$s is a link */
-					printf( esc_html__( 'If you want to know more about what a Nonce is and how it works, please read about it on the %1$sWordPress Codex%2$s.', 'la-sentinelle-antispam' ), $link_wp, '</a>' );
+					printf( esc_html__( 'If you want to know more about what a Nonce is and how it works, please read about it on the %1$sWordPress Documentation%2$s.', 'la-sentinelle-antispam' ), $link_wp, '</a>' );
 					echo '<br />';
 					esc_html_e('If your website uses caching, it is possible that you get false-positives in your spamfolder. If this is the case, you could either disable the Nonce, or disable caching for the form pages.', 'la-sentinelle-antispam');
 					?>

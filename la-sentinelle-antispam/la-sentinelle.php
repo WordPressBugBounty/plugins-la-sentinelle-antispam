@@ -3,7 +3,7 @@
 Plugin Name: La Sentinelle antispam
 Plugin URI: https://wordpress.org/plugins/la-sentinelle-antispam/
 Description: Feel safe knowing that your website is safe from spam. La Sentinelle will guard your WordPress website against spam in a simple and effective way.
-Version: 4.0.0
+Version: 4.0.1
 Author: Marcel Pol
 Author URI: https://timelord.nl
 License: GPLv2 or later
@@ -13,6 +13,16 @@ Domain Path: /lang/
 
 
 Copyright 2018 - 2025  Marcel Pol  (marcel@timelord.nl)
+Copyright 2023         ntodo
+Copyright 2023         Barry / riceooks
+Copyright 2024         misterpo
+Copyright 2024         lamachinedigitale
+Copyright 2024         delanthear
+Copyright 2025         Peter Thaleikis
+Copyright 2023, 2025   bonaldi
+Copyright 2025         grynge
+Copyright 2025         mediaformat
+
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,13 +41,12 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 // Plugin Version
-define('LASENT_VER', '4.0.0');
+define('LASENT_VER', '4.0.1');
 
 
 /*
  * Todo:
  *
- * - Fix WebGL with CF7 refill.
  * - Support and test bbPress and BuddyPress.
  * - Add manually moved slider for when spammers start using JavaScript (like Ali Express).
  * - Borrow cookie ideas from https://wordpress.org/plugins/spam-destroyer/
@@ -49,6 +58,7 @@ define('LASENT_VER', '4.0.0');
  *
  * - Ninja Forms
  * - Gravity Forms (contact their support?)
+ * - Fluent Forms
  *
  *
  * Nodo:
