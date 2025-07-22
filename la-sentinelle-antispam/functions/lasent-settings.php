@@ -10,40 +10,40 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * @since 1.0.0
  */
 function la_sentinelle_register_settings() {
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-ajax',                 'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-caldera_blocked',      'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-cf7_blocked',          'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-everest',              'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-everest_blocked',      'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-experiment',           'strval' ); // serialized string
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-formidable',           'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-formidable_blocked',   'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-forminator',           'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-forminator_blocked',   'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-honeypot',             'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-honeypot_value',       'intval' ); // random 1 - 100
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-nonce',                'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-noptin',               'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-noptin_blocked',       'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-remove_comments',      'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-save_comments',        'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-sfs',                  'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-timeout',              'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-version',              'strval' ); // string
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-webgl',                'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-woo-registration',     'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomment',            'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomments_blocked',   'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpforms',              'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpforms_blocked',      'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpjobmanager',         'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpjobmanager_blocked', 'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wplogin',              'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wplogin_blocked',      'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wppassword',           'strval' ); // 'false'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wppassword_blocked',   'intval' ); // int
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpregister',           'strval' ); // 'true'
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpregister_blocked',   'intval' ); // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-ajax',                 'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-caldera_blocked',      'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-cf7_blocked',          'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-everest',              'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-everest_blocked',      'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-experiment',           'sanitize_text_field' ); // serialized string
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-formidable',           'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-formidable_blocked',   'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-forminator',           'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-forminator_blocked',   'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-honeypot',             'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-honeypot_value',       'intval' );              // random 1 - 100
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-nonce',                'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-noptin',               'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-noptin_blocked',       'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-remove_comments',      'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-save_comments',        'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-sfs',                  'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-timeout',              'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-version',              'sanitize_text_field' ); // string
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-webgl',                'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-woo-registration',     'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomment',            'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomments_blocked',   'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpforms',              'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpforms_blocked',      'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpjobmanager',         'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpjobmanager_blocked', 'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wplogin',              'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wplogin_blocked',      'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wppassword',           'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wppassword_blocked',   'intval' );              // int
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpregister',           'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpregister_blocked',   'intval' );              // int
 }
 add_action( 'admin_init', 'la_sentinelle_register_settings' );
 

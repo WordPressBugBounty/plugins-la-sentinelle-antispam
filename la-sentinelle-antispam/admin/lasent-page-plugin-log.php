@@ -206,7 +206,7 @@ function la_sentinelle_adminpage_plugin_log_massedit() {
 	/* Check Nonce */
 	$verified = false;
 	if ( isset($_POST['la_sentinelle_log_wpnonce']) ) {
-		$verified = wp_verify_nonce( $_POST['la_sentinelle_log_wpnonce'], 'la_sentinelle_log_wpnonce' );
+		$verified = wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['la_sentinelle_log_wpnonce'] ) ), 'la_sentinelle_log_wpnonce' );
 	}
 	if ( $verified === false ) {
 		// Nonce is invalid, so considered spam.

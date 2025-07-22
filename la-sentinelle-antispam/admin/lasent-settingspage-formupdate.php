@@ -30,7 +30,7 @@ function la_sentinelle_settingspage_formupdate() {
 					/* Check Nonce */
 					$verified = false;
 					if ( isset($_POST['la_sentinelle_settingstab_spamfilters']) ) {
-						$verified = wp_verify_nonce( $_POST['la_sentinelle_settingstab_spamfilters'], 'la_sentinelle_settingstab_spamfilters' );
+						$verified = wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['la_sentinelle_settingstab_spamfilters'] ) ), 'la_sentinelle_settingstab_spamfilters' );
 					}
 					if ( $verified === false ) {
 						// Nonce is invalid.
@@ -92,7 +92,7 @@ function la_sentinelle_settingspage_formupdate() {
 					/* Check Nonce */
 					$verified = false;
 					if ( isset($_POST['la_sentinelle_settingstab_forms']) ) {
-						$verified = wp_verify_nonce( $_POST['la_sentinelle_settingstab_forms'], 'la_sentinelle_settingstab_forms' );
+						$verified = wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['la_sentinelle_settingstab_forms'] ) ), 'la_sentinelle_settingstab_forms' );
 					}
 					if ( $verified === false ) {
 						// Nonce is invalid.
@@ -196,7 +196,7 @@ function la_sentinelle_settingspage_formupdate() {
 					/* Check Nonce */
 					$verified = false;
 					if ( isset($_POST['la_sentinelle_settingstab_misc']) ) {
-						$verified = wp_verify_nonce( $_POST['la_sentinelle_settingstab_misc'], 'la_sentinelle_settingstab_misc' );
+						$verified = wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['la_sentinelle_settingstab_misc'] ) ), 'la_sentinelle_settingstab_misc' );
 					}
 					if ( $verified === false ) {
 						// Nonce is invalid.
