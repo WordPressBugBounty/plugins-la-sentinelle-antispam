@@ -3,7 +3,7 @@ Contributors: mpol, mediaformat, grynge, bonaldi, delanthear, lamachinedigitale,
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
 Tested up to: 6.8
-Stable tag: 4.0.2
+Stable tag: 4.0.3
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -142,6 +142,10 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 4.0.3 =
+* 2025-10-05
+* Fix alert (ouch, sorry). Thanks mediaformat.
 
 = 4.0.2 =
 * 2025-07-22

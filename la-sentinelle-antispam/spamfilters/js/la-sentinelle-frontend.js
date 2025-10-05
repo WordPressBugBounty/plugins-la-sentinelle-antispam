@@ -202,7 +202,7 @@ function la_sentinelle_canvas_webgl( form, index ) {
 
 		// Only continue if WebGL is available and working
 		if (gl === null) {
-			alert( 'Unable to initialize WebGL. Your browser or machine may not support it.' );
+			console.info( 'Unable to initialize WebGL. Your browser or machine may not support it.' );
 			return;
 		}
 
