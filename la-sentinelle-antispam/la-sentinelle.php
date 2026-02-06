@@ -3,7 +3,7 @@
 Plugin Name: La Sentinelle antispam
 Plugin URI: https://timelord.nl
 Description: Feel safe knowing that your website is safe from spam. La Sentinelle will guard your WordPress website against spam in a simple and effective way.
-Version: 4.0.3
+Version: 4.1.0
 Author: Marcel Pol
 Author URI: https://timelord.nl
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Domain Path: /lang/
 
 
 
-Copyright 2018 - 2025  Marcel Pol  (marcel@timelord.nl)
+Copyright 2018 - 2026  Marcel Pol  (marcel@timelord.nl)
 Copyright 2023         ntodo
 Copyright 2023         Barry / riceooks
 Copyright 2024         misterpo
@@ -41,16 +41,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 // Plugin Version
-define('LASENT_VER', '4.0.3');
+define('LASENT_VER', '4.1.0');
 
 
 /*
  * Todo:
  *
+ * - Whitelist IP addresses (https://wordpress.org/support/topic/site-lockout-2).
  * - Support and test bbPress and BuddyPress.
  * - Add manually moved slider for when spammers start using JavaScript (like Ali Express).
  * - Borrow cookie ideas from https://wordpress.org/plugins/spam-destroyer/
- * - Only run Ajax and WebGL javascript when enabled.
  *
  * Forms:
  * - Elementor form
@@ -85,7 +85,6 @@ require_once LASENT_DIR . '/spamfilters/lasent-honeypot.php';
 require_once LASENT_DIR . '/spamfilters/lasent-nonce.php';
 require_once LASENT_DIR . '/spamfilters/lasent-stop-forum-spam.php';
 require_once LASENT_DIR . '/spamfilters/lasent-timeout.php';
-require_once LASENT_DIR . '/spamfilters/lasent-webgl.php';
 
 // Functions for the forms
 require_once LASENT_DIR . '/forms/lasent-wordpress-comment-form.php';

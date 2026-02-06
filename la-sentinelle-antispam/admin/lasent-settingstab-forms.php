@@ -293,6 +293,8 @@ function la_sentinelle_settingstab_forms() {
 								esc_html_e( 'Enabling this setting will add La Sentinelle antispam fields to the register forms in WooCommerce, when register forms in WordPress Core are also enabled.', 'la-sentinelle-antispam' );
 								echo '<br />';
 								esc_html_e( 'Please understand that it will also be enabled on the Checkout page. You will want to be careful and test thoroughly if that works fine in your website, before enabling it. Instead, it is preferred to use cleanup options for accounts under WooCommerce > Settings > Accounts-tab, that is the least destructive option.', 'la-sentinelle-antispam' );
+								echo '<br />';
+								esc_html_e( 'Only the classic registration is supported, not the registration block for the block editor.', 'la-sentinelle-antispam' );
 								?>
 							</span>
 						</p>

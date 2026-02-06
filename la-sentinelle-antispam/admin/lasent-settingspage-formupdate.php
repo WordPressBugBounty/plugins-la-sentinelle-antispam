@@ -39,50 +39,42 @@ function la_sentinelle_settingspage_formupdate() {
 					}
 
 					if (isset($_POST['la_sentinelle-honeypot']) && $_POST['la_sentinelle-honeypot'] === 'on') {
-						update_option('la_sentinelle-honeypot', 'true');
+						update_option( 'la_sentinelle-honeypot', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-honeypot', 'false');
+						update_option( 'la_sentinelle-honeypot', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-nonce']) && $_POST['la_sentinelle-nonce'] === 'on') {
-						update_option('la_sentinelle-nonce', 'true');
+						update_option( 'la_sentinelle-nonce', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-nonce', 'false');
+						update_option( 'la_sentinelle-nonce', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-timeout']) && $_POST['la_sentinelle-timeout'] === 'on') {
-						update_option('la_sentinelle-timeout', 'true');
+						update_option( 'la_sentinelle-timeout', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-timeout', 'false');
+						update_option( 'la_sentinelle-timeout', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-sfs']) && $_POST['la_sentinelle-sfs'] === 'on') {
-						update_option('la_sentinelle-sfs', 'true');
+						update_option( 'la_sentinelle-sfs', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-sfs', 'false');
+						update_option( 'la_sentinelle-sfs', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-ajax']) && $_POST['la_sentinelle-ajax'] === 'on') {
-						update_option('la_sentinelle-ajax', 'true');
+						update_option( 'la_sentinelle-ajax', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-ajax', 'false');
-						$saved = true;
-					}
-
-					if (isset($_POST['la_sentinelle-webgl']) && $_POST['la_sentinelle-webgl'] === 'on') {
-						update_option('la_sentinelle-webgl', 'true');
-						$saved = true;
-					} else {
-						update_option('la_sentinelle-webgl', 'false');
+						update_option( 'la_sentinelle-ajax', 'false', true );
 						$saved = true;
 					}
 
@@ -101,90 +93,90 @@ function la_sentinelle_settingspage_formupdate() {
 					}
 
 					if (isset($_POST['la_sentinelle-wpcomment']) && $_POST['la_sentinelle-wpcomment'] === 'on') {
-						update_option('la_sentinelle-wpcomment', 'true');
+						update_option( 'la_sentinelle-wpcomment', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wpcomment', 'false');
+						update_option( 'la_sentinelle-wpcomment', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-wplogin']) && $_POST['la_sentinelle-wplogin'] === 'on') {
-						update_option('la_sentinelle-wplogin', 'true');
+						update_option( 'la_sentinelle-wplogin', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wplogin', 'false');
+						update_option( 'la_sentinelle-wplogin', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-wppassword']) && $_POST['la_sentinelle-wppassword'] === 'on') {
-						update_option('la_sentinelle-wppassword', 'true');
+						update_option( 'la_sentinelle-wppassword', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wppassword', 'false');
+						update_option( 'la_sentinelle-wppassword', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-wpregister']) && $_POST['la_sentinelle-wpregister'] === 'on') {
-						update_option('la_sentinelle-wpregister', 'true');
+						update_option( 'la_sentinelle-wpregister', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wpregister', 'false');
+						update_option( 'la_sentinelle-wpregister', 'false', true );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-everest']) && $_POST['la_sentinelle-everest'] === 'on') {
-						update_option('la_sentinelle-everest', 'true');
+						update_option( 'la_sentinelle-everest', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-everest', 'false');
+						update_option( 'la_sentinelle-everest', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-formidable']) && $_POST['la_sentinelle-formidable'] === 'on') {
-						update_option('la_sentinelle-formidable', 'true');
+						update_option( 'la_sentinelle-formidable', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-formidable', 'false');
+						update_option( 'la_sentinelle-formidable', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-forminator']) && $_POST['la_sentinelle-forminator'] === 'on') {
-						update_option('la_sentinelle-forminator', 'true');
+						update_option( 'la_sentinelle-forminator', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-forminator', 'false');
+						update_option( 'la_sentinelle-forminator', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-noptin']) && $_POST['la_sentinelle-noptin'] === 'on') {
-						update_option('la_sentinelle-noptin', 'true');
+						update_option( 'la_sentinelle-noptin', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-noptin', 'false');
+						update_option( 'la_sentinelle-noptin', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-woo-registration']) && $_POST['la_sentinelle-woo-registration'] === 'on') {
-						update_option('la_sentinelle-woo-registration', 'true');
+						update_option( 'la_sentinelle-woo-registration', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-woo-registration', 'false');
+						update_option( 'la_sentinelle-woo-registration', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-wpforms']) && $_POST['la_sentinelle-wpforms'] === 'on') {
-						update_option('la_sentinelle-wpforms', 'true');
+						update_option( 'la_sentinelle-wpforms', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wpforms', 'false');
+						update_option( 'la_sentinelle-wpforms', 'false', false );
 						$saved = true;
 					}
 
 					if (isset($_POST['la_sentinelle-wpjobmanager']) && $_POST['la_sentinelle-wpjobmanager'] === 'on') {
-						update_option('la_sentinelle-wpjobmanager', 'true');
+						update_option( 'la_sentinelle-wpjobmanager', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-wpjobmanager', 'false');
+						update_option( 'la_sentinelle-wpjobmanager', 'false', false );
 						$saved = true;
 					}
 
@@ -205,17 +197,17 @@ function la_sentinelle_settingspage_formupdate() {
 					}
 
 					if (isset($_POST['la_sentinelle-save_comments']) && $_POST['la_sentinelle-save_comments'] === 'on') {
-						update_option('la_sentinelle-save_comments', 'true');
+						update_option( 'la_sentinelle-save_comments', 'true', true );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-save_comments', 'false');
+						update_option( 'la_sentinelle-save_comments', 'false', true );
 						$saved = true;
 					}
 					if (isset($_POST['la_sentinelle-remove_comments']) && $_POST['la_sentinelle-remove_comments'] === 'on') {
-						update_option('la_sentinelle-remove_comments', 'true');
+						update_option( 'la_sentinelle-remove_comments', 'true', false );
 						$saved = true;
 					} else {
-						update_option('la_sentinelle-remove_comments', 'false');
+						update_option( 'la_sentinelle-remove_comments', 'false', false );
 						$saved = true;
 					}
 

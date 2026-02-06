@@ -131,27 +131,6 @@ function la_sentinelle_settingstab_spamfilters() {
 		</tr>
 
 		<tr>
-			<th scope="row"><label for="la_sentinelle-webgl"><?php esc_html_e('WebGL', 'la-sentinelle-antispam'); ?></label></th>
-			<td>
-				<input <?php
-					if (get_option( 'la_sentinelle-webgl', 'false') === 'true') {
-						echo 'checked="checked"';
-					} ?>
-					type="checkbox" name="la_sentinelle-webgl" id="la_sentinelle-webgl">
-				<label for="la_sentinelle-webgl">
-					<?php esc_html_e('Use WebGL.', 'la-sentinelle-antispam'); ?> <?php esc_html_e('(Experimental)', 'la-sentinelle-antispam'); ?>
-				</label><br />
-				<span class="setting-description">
-					<?php
-					esc_html_e('This will add a WebGL test to the form. It is a way to check for a real browser with 3D and WebGL enabled. If it does not validate, the entry will be marked as spam.', 'la-sentinelle-antispam');
-					echo '<br />';
-					esc_html_e('This spamfilter is experimental, it is possible that you get false-positives in your spamfolder. If this is the case, you are advised to disable this WebGL filter and report this on the support forum.', 'la-sentinelle-antispam');
-					?>
-				</span>
-			</td>
-		</tr>
-
-		<tr>
 			<th colspan="2">
 				<p class="submit">
 					<input type="submit" name="la_sentinelle_settings_submit" id="la_sentinelle_settings_submit" class="button-primary" value="<?php esc_attr_e('Save settings', 'la-sentinelle-antispam'); ?>" />

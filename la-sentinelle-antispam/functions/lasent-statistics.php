@@ -34,7 +34,7 @@ function la_sentinelle_add_statistic_blocked( $form ) {
 	$option = 'la_sentinelle-' . $form . '_blocked';
 	$blocked = (int) get_option( $option, 0 );
 	$blocked++;
-	update_option( $option, $blocked );
+	update_option( $option, $blocked, false );
 
 }
 

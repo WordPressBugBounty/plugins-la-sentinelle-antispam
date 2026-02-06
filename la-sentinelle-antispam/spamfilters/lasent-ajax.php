@@ -16,9 +16,9 @@ function la_sentinelle_get_ajax() {
 	$output = '';
 
 	$field_name2 = la_sentinelle_get_field_name( 'ajax2' );
-	$field_name3 = la_sentinelle_get_field_name( 'ajax3' ); // there is no ajax(1), to keep it similar to webgl field order.
+	$field_name3 = la_sentinelle_get_field_name( 'ajax3' ); // there is no ajax(1).
 	$field_id2 = la_sentinelle_get_field_id( $field_name2 );
-	$field_id3 = la_sentinelle_get_field_id( $field_name3 ); // there is no ajax(1), to keep it similar to webgl field order.
+	$field_id3 = la_sentinelle_get_field_id( $field_name3 ); // there is no ajax(1).
 	$honeypot_value = (int) get_option( 'la_sentinelle-honeypot_value', 15 );
 	$ajax3_value = sanitize_text_field( base64_encode( sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) ) );
 	$output .= '

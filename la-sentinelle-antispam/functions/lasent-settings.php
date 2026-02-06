@@ -30,7 +30,6 @@ function la_sentinelle_register_settings() {
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-sfs',                  'sanitize_text_field' ); // 'false'
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-timeout',              'sanitize_text_field' ); // 'true'
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-version',              'sanitize_text_field' ); // string
-	register_setting( 'la_sentinelle_options', 'la_sentinelle-webgl',                'sanitize_text_field' ); // 'false'
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-woo-registration',     'sanitize_text_field' ); // 'false'
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomment',            'sanitize_text_field' ); // 'true'
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-wpcomments_blocked',   'intval' );              // int
@@ -61,68 +60,65 @@ function la_sentinelle_set_defaults() {
 
 	// Setting defaults to avoid empty cache and multiple queries.
 	if ( get_option('la_sentinelle-ajax', false) === false ) {
-		update_option( 'la_sentinelle-ajax', 'false' );
+		update_option( 'la_sentinelle-ajax', 'false', true );
 	}
 	if ( get_option('la_sentinelle-everest', false) === false ) {
-		update_option( 'la_sentinelle-everest', 'true' );
+		update_option( 'la_sentinelle-everest', 'true', false );
 	}
 	if ( get_option('la_sentinelle-formidable', false) === false ) {
-		update_option( 'la_sentinelle-formidable', 'true' );
+		update_option( 'la_sentinelle-formidable', 'true', false );
 	}
 	if ( get_option('la_sentinelle-forminator', false) === false ) {
-		update_option( 'la_sentinelle-forminator', 'true' );
+		update_option( 'la_sentinelle-forminator', 'true', false );
 	}
 	if ( get_option('la_sentinelle-honeypot', false) === false ) {
-		update_option( 'la_sentinelle-honeypot', 'true' );
+		update_option( 'la_sentinelle-honeypot', 'true', true );
 	}
 	if ( get_option('la_sentinelle-honeypot_value', false) === false ) {
 		$random = rand( 1, 99 );
-		update_option( 'la_sentinelle-honeypot_value', $random );
+		update_option( 'la_sentinelle-honeypot_value', $random, true );
 	}
 	if ( get_option('la_sentinelle-nonce', false) === false ) {
-		update_option( 'la_sentinelle-nonce', 'false' );
+		update_option( 'la_sentinelle-nonce', 'false', true );
 	}
 	if ( get_option('la_sentinelle-noptin', false) === false ) {
-		update_option( 'la_sentinelle-noptin', 'true' );
+		update_option( 'la_sentinelle-noptin', 'true', false );
 	}
 	if ( get_option('la_sentinelle-remove_comments', false) === false ) {
-		update_option( 'la_sentinelle-remove_comments', 'false' );
+		update_option( 'la_sentinelle-remove_comments', 'false', false );
 	}
 	if ( get_option('la_sentinelle-save_comments', false) === false ) {
-		update_option( 'la_sentinelle-save_comments', 'true' );
+		update_option( 'la_sentinelle-save_comments', 'true', true );
 	}
 	if ( get_option('la_sentinelle-sfs', false) === false ) {
-		update_option( 'la_sentinelle-sfs', 'false' );
+		update_option( 'la_sentinelle-sfs', 'false', true );
 	}
 	if ( get_option('la_sentinelle-timeout', false) === false ) {
-		update_option( 'la_sentinelle-timeout', 'true' );
-	}
-	if ( get_option('la_sentinelle-webgl', false) === false ) {
-		update_option( 'la_sentinelle-webgl', 'false' );
+		update_option( 'la_sentinelle-timeout', 'true', true );
 	}
 	if ( get_option('la_sentinelle-woo-registration', false) === false ) {
-		update_option( 'la_sentinelle-woo-registration', 'false' );
+		update_option( 'la_sentinelle-woo-registration', 'false', false );
 	}
 	if ( get_option('la_sentinelle-wpcomment', false) === false ) {
-		update_option( 'la_sentinelle-wpcomment', 'true' );
+		update_option( 'la_sentinelle-wpcomment', 'true', true );
 	}
 	if ( get_option('la_sentinelle-wpforms', false) === false ) {
-		update_option( 'la_sentinelle-wpforms', 'true' );
+		update_option( 'la_sentinelle-wpforms', 'true', false );
 	}
 	if ( get_option('la_sentinelle-wpjobmanager', false) === false ) {
-		update_option( 'la_sentinelle-wpjobmanager', 'true' );
+		update_option( 'la_sentinelle-wpjobmanager', 'true', false );
 	}
 	if ( get_option('la_sentinelle-wplogin', false) === false ) {
-		update_option( 'la_sentinelle-wplogin', 'true' );
+		update_option( 'la_sentinelle-wplogin', 'true', true );
 	}
 	if ( get_option('la_sentinelle-wppassword', false) === false ) {
-		update_option( 'la_sentinelle-wppassword', 'false' );
+		update_option( 'la_sentinelle-wppassword', 'false', true );
 	}
 	if ( get_option('la_sentinelle-wpregister', false) === false ) {
-		update_option( 'la_sentinelle-wpregister', 'true' );
+		update_option( 'la_sentinelle-wpregister', 'true', true );
 	}
 
-	update_option('la_sentinelle-version', LASENT_VER);
+	update_option( 'la_sentinelle-version', LASENT_VER, true );
 
 }
 

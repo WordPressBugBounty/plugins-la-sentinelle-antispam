@@ -18,7 +18,6 @@ function la_sentinelle_check_spamfilters( $nonce_action = 'default' ) {
 	la_sentinelle_check_honeypot();
 	la_sentinelle_check_timeout();
 	la_sentinelle_check_ajax();
-	la_sentinelle_check_webgl();
 
 	// All filters are checked, now see if a check had a positive score.
 	$markers = la_sentinelle_check_scores();

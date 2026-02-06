@@ -31,8 +31,6 @@ function la_sentinelle_get_spamfilters( $nonce_action = 'default' ) {
 			$output .= la_sentinelle_get_timeout();
 		} else if ( $filter === 5 ) {
 			$output .= la_sentinelle_get_ajax();
-		} else if ( $filter === 6 ) {
-			$output .= la_sentinelle_get_webgl();
 		}
 	}
 
@@ -65,9 +63,8 @@ function la_sentinelle_enqueue() {
 		'honeypot2' => la_sentinelle_get_field_name( 'honeypot2' ),
 		'timeout'   => la_sentinelle_get_field_name( 'timeout' ),
 		'timeout2'  => la_sentinelle_get_field_name( 'timeout2' ),
-		'webgl'     => la_sentinelle_get_field_name( 'webgl' ),
-		'webgl2'    => la_sentinelle_get_field_name( 'webgl2' ),
-		'webgl3'    => la_sentinelle_get_field_name( 'webgl3' ),
+		'ajax_enabled' => get_option( 'la_sentinelle-ajax' ),
+
 	);
 	wp_localize_script( 'la_sentinelle_frontend_js', 'la_sentinelle_frontend_script', $data_to_be_passed );
 	wp_enqueue_script('la_sentinelle_frontend_js');
@@ -98,9 +95,6 @@ function la_sentinelle_dead_enqueue() {
 		"honeypot2":"<?php echo la_sentinelle_get_field_name( 'honeypot2' ); ?>",
 		"timeout":  "<?php echo la_sentinelle_get_field_name( 'timeout' ); ?>",
 		"timeout2": "<?php echo la_sentinelle_get_field_name( 'timeout2' ); ?>",
-		"webgl":    "<?php echo la_sentinelle_get_field_name( 'webgl' ); ?>",
-		"webgl2":   "<?php echo la_sentinelle_get_field_name( 'webgl2' ); ?>",
-		"webgl3":   "<?php echo la_sentinelle_get_field_name( 'webgl3' ); ?>",
 	};
 	</script>
 	<?php

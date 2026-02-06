@@ -128,8 +128,6 @@ function la_sentinelle_wp_insert_comment( $id, $comment ) {
 				update_comment_meta( $id, 'la_sentinelle_timeout', 'spam' );
 			} else if ( $marker === 'ajax' ) {
 				update_comment_meta( $id, 'la_sentinelle_ajax', 'spam' );
-			} else if ( $marker === 'webgl' ) {
-				update_comment_meta( $id, 'la_sentinelle_webgl', 'spam' );
 			}
 		}
 	}
@@ -202,9 +200,8 @@ function la_sentinelle_edit_comment_meta( $output, $comment ) {
 	$la_sentinelle_timeout  = get_comment_meta( $comment_id, 'la_sentinelle_timeout', true );
 	$la_sentinelle_sfs      = get_comment_meta( $comment_id, 'la_sentinelle_sfs', true );
 	$la_sentinelle_ajax     = get_comment_meta( $comment_id, 'la_sentinelle_ajax', true );
-	$la_sentinelle_webgl    = get_comment_meta( $comment_id, 'la_sentinelle_webgl', true );
 
-	if ( $la_sentinelle_nonce === 'spam' || $la_sentinelle_honeypot === 'spam' || $la_sentinelle_timeout === 'spam' || $la_sentinelle_sfs === 'spam' || $la_sentinelle_ajax === 'spam' || $la_sentinelle_webgl === 'spam' ) {
+	if ( $la_sentinelle_nonce === 'spam' || $la_sentinelle_honeypot === 'spam' || $la_sentinelle_timeout === 'spam' || $la_sentinelle_sfs === 'spam' || $la_sentinelle_ajax === 'spam' ) {
 
 		$output .= '<div class="misc-pub-section misc-pub-la-sentinelle">
 			<span><b>' . esc_html__( 'La Sentinelle', 'la-sentinelle-antispam' ) . '</b></span><br />
@@ -228,10 +225,6 @@ function la_sentinelle_edit_comment_meta( $output, $comment ) {
 		}
 		if ( $la_sentinelle_ajax === 'spam' ) {
 			$output .= '<span>&bull; ' . esc_html__( 'Marked as spam by AJAX', 'la-sentinelle-antispam' ) . '</span><br />
-				';
-		}
-		if ( $la_sentinelle_webgl === 'spam' ) {
-			$output .= '<span>&bull; ' . esc_html__( 'Marked as spam by WebGL', 'la-sentinelle-antispam' ) . '</span><br />
 				';
 		}
 

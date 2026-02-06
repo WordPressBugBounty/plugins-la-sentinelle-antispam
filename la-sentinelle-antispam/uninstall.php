@@ -34,7 +34,7 @@ $option_names = array(
 		'la_sentinelle-forminator_blocked',
 		'la_sentinelle-noptin',
 		'la_sentinelle-noptin_blocked',
-		'la_sentinelle-webgl',
+		'la_sentinelle-webgl', // deprecated since 4.1.0
 		'la_sentinelle-woo-registration',
 		'la_sentinelle-wpforms',
 		'la_sentinelle-wpforms_blocked',
