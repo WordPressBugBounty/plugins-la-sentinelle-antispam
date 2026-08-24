@@ -70,6 +70,8 @@ if (get_option( 'la_sentinelle-wpregister', 'true') === 'true') {
 		// I don't dare to enable this by default. Please use cleanup options for accounts under WooCommerce > Settings > Accounts-tab, that is the least destructive option.
 		// See https://wordpress.org/support/topic/not-working-on-woocommerce-registration-form/
 		add_filter( 'woocommerce_registration_errors', 'la_sentinelle_check_registration_form', 9999, 3 );
+		// I don’t see a good way to support the block editor, it’s all JavaScript, no PHP.
+		// https://wordpress.org/support/topic/spam-orders-prevention/
 	}
 
 }

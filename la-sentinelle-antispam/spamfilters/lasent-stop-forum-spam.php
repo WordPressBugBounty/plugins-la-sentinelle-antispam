@@ -191,7 +191,10 @@ function la_sentinelle_check_stop_forum_spam( $args = array() ) {
  *
  */
 function plugins_loaded_la_sentinelle_check_stop_forum_spam() {
-	if ( la_sentinelle_check_stop_forum_spam() ) {
+	if (
+		get_option( 'la_sentinelle-sfs', 'false') === 'true' &&
+		la_sentinelle_check_stop_forum_spam()
+		) {
 		wp_die( '<center>Your IP is on a <a href="https://stopforumspam.com">Spam Blacklist</a>.</center>', 'la-sentinelle-antispam' );
 	}
 }

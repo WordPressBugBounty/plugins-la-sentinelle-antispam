@@ -2,8 +2,8 @@
 Contributors: mpol, mediaformat, grynge, bonaldi, delanthear, lamachinedigitale, misterpo, riceooks, ntodo
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
-Tested up to: 6.9
-Stable tag: 4.1.0
+Tested up to: 7.1
+Stable tag: 4.1.1
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -132,6 +132,14 @@ If that doesn't help, I advise to add an extra plugin in the form of [OOPSpam](h
 
 That makes this plugin less valuable. It will be more expensive to them though, which in general makes it a good thing.
 
+= How do I test the Stop Forum Spam service? =
+
+Enable Registration form filtering, also enable Stop Forum Spam filter in settings.
+Go to a registration form under '/wp-login.php?action=register'. As username, use ‘spammer’.
+
+You should not be able to register with this username.
+You can check to see the statistics under Settings > La Sentinelle > About. It should increase the counter on registration.
+
 
 == Screenshots ==
 
@@ -142,6 +150,10 @@ That makes this plugin less valuable. It will be more expensive to them though, 
 
 
 == Changelog ==
+
+= 4.1.1 =
+* 2026-08-24
+* Fix for Blacklist notice in Stop Forum Spam on dashboard (thanks duf).
 
 = 4.1.0 =
 * 2026-01-20

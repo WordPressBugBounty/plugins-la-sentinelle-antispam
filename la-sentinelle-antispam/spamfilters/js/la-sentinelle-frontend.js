@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		if ( (typeof ajax2_val !== 'undefined') && ( ! isNaN( ajax2_val ) ) && ajax2_val > 0 ) {
 
-			var ajax3_val = form.querySelector(`input.${ajax3_field}`).value;
+			var ajax3_val = form.querySelector(`input.${ajax3_field}`)?.value;
 
 			// Set up data to send
 			var ajaxurl  = la_sentinelle_frontend_script.ajaxurl;
