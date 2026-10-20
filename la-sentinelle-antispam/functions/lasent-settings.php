@@ -11,6 +11,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 function la_sentinelle_register_settings() {
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-ajax',                 'sanitize_text_field' ); // 'false'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-bookingactivities',         'sanitize_text_field' ); // 'true'
+	register_setting( 'la_sentinelle_options', 'la_sentinelle-bookingactivities_blocked', 'intval' );              // int
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-caldera_blocked',      'intval' );              // int
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-cf7_blocked',          'intval' );              // int
 	register_setting( 'la_sentinelle_options', 'la_sentinelle-everest',              'sanitize_text_field' ); // 'true'
@@ -101,6 +103,9 @@ function la_sentinelle_set_defaults() {
 	}
 	if ( get_option('la_sentinelle-wpcomment', false) === false ) {
 		update_option( 'la_sentinelle-wpcomment', 'true', true );
+	}
+	if ( get_option('la_sentinelle-bookingactivities', false) === false ) {
+		update_option( 'la_sentinelle-bookingactivities', 'true', false );
 	}
 	if ( get_option('la_sentinelle-wpforms', false) === false ) {
 		update_option( 'la_sentinelle-wpforms', 'true', false );

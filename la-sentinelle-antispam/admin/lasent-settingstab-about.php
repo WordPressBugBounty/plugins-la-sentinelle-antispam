@@ -94,6 +94,15 @@ function la_sentinelle_settingstab_about() {
 						echo '<br />';
 					}
 
+					if ( in_array( 'booking-activities/booking-activities.php', $active_plugins, true ) ) {
+						echo '<br /><b>' . esc_html__('Booking Activities', 'la-sentinelle-antispam') . '</b><br />';
+
+						$bookingactivities_blocked = (int) la_sentinelle_get_statistic_blocked( 'bookingactivities' );
+						/* translators: %d is a counter for form submissions blocked */
+						printf( _n( '%d form submission was blocked.', '%d form submissions were blocked.', $bookingactivities_blocked, 'la-sentinelle-antispam' ), $bookingactivities_blocked );
+						echo '<br />';
+					}
+
 					if ( in_array( 'wpforms-lite/wpforms.php', $active_plugins, true ) ) {
 						echo '<br /><b>' . esc_html__('WPForms Lite', 'la-sentinelle-antispam') . '</b><br />';
 

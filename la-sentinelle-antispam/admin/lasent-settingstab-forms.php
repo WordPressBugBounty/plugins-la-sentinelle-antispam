@@ -76,6 +76,30 @@ function la_sentinelle_settingstab_forms() {
 
 		foreach ( $active_plugins as $plugin ) {
 
+			if ( $plugin === 'booking-activities/booking-activities.php' ) {
+				$supported_plugin = true; ?>
+				<tr valign="top">
+					<th scope="row">
+						<label for="la_sentinelle-bookingactivities">Booking Activities</label>
+					</th>
+					<td>
+						<input <?php
+						if (get_option( 'la_sentinelle-bookingactivities', 'true') === 'true') {
+							echo 'checked="checked"';
+						} ?>
+						type="checkbox" name="la_sentinelle-bookingactivities" id="la_sentinelle-bookingactivities">
+						<label for="la_sentinelle-bookingactivities">
+							<?php esc_html_e('Enable spamfilters for Booking Activities.', 'la-sentinelle-antispam'); ?>
+						</label><br />
+						<span class="setting-description">
+							<?php
+							esc_html_e( 'Enabling this setting will add La Sentinelle antispam fields to every Booking Activities booking form.', 'la-sentinelle-antispam' ); echo '<br />';
+							?>
+						</span>
+					</td>
+				</tr><?php
+			}
+
 			if ( $plugin === 'caldera-forms/caldera-core.php' ) {
 				$supported_plugin = true; ?>
 				<tr valign="top">

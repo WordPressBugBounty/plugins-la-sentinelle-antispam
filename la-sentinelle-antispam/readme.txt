@@ -3,7 +3,7 @@ Contributors: mpol, mediaformat, grynge, bonaldi, delanthear, lamachinedigitale,
 Tags: antispam, anti-spam, comments, registration, stop forum spam
 Requires at least: 4.1
 Tested up to: 7.1
-Stable tag: 4.1.1
+Stable tag: 4.2.0
 License: GPLv2 or later
 Requires PHP: 7.0
 
@@ -39,6 +39,7 @@ WordPress forms that are protected:
 
 Form Plugins that are protected:
 
+* [Booking Activities](https://wordpress.org/plugins/booking-activities/) (event booking).
 * [Caldera Forms](https://wordpress.org/plugins/caldera-forms/).
 * [Clean Login](https://wordpress.org/plugins/clean-login/) (Login form).
 * [Contact Form 7](https://wordpress.org/plugins/contact-form-7/).
@@ -150,6 +151,10 @@ You can check to see the statistics under Settings > La Sentinelle > About. It s
 
 
 == Changelog ==
+
+= 4.2.0 =
+* 2026-10-20
+* Add support for Booking Activities (thanks tlloancy).
 
 = 4.1.1 =
 * 2026-08-24

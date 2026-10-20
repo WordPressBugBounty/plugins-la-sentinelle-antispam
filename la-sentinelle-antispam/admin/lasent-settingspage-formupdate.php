@@ -164,6 +164,14 @@ function la_sentinelle_settingspage_formupdate() {
 						$saved = true;
 					}
 
+					if (isset($_POST['la_sentinelle-bookingactivities']) && $_POST['la_sentinelle-bookingactivities'] === 'on') {
+						update_option( 'la_sentinelle-bookingactivities', 'true', false );
+						$saved = true;
+					} else {
+						update_option( 'la_sentinelle-bookingactivities', 'false', false );
+						$saved = true;
+					}
+
 					if (isset($_POST['la_sentinelle-wpforms']) && $_POST['la_sentinelle-wpforms'] === 'on') {
 						update_option( 'la_sentinelle-wpforms', 'true', false );
 						$saved = true;

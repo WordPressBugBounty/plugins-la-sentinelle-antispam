@@ -3,7 +3,7 @@
 Plugin Name: La Sentinelle antispam
 Plugin URI: https://timelord.nl
 Description: Feel safe knowing that your website is safe from spam. La Sentinelle will guard your WordPress website against spam in a simple and effective way.
-Version: 4.1.1
+Version: 4.2.0
 Author: Marcel Pol
 Author URI: https://timelord.nl
 License: GPLv2 or later
@@ -23,6 +23,7 @@ Copyright 2023, 2025   bonaldi
 Copyright 2025         grynge
 Copyright 2025         mediaformat
 Copyright 2026         duf
+Copyright 2026         tlloancy
 
 
 This program is free software; you can redistribute it and/or modify
@@ -42,7 +43,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 // Plugin Version
-define('LASENT_VER', '4.1.1');
+define('LASENT_VER', '4.2.0');
 
 
 /*
@@ -92,6 +93,7 @@ require_once LASENT_DIR . '/forms/lasent-wordpress-comment-form.php';
 require_once LASENT_DIR . '/forms/lasent-wordpress-login-form.php';
 require_once LASENT_DIR . '/forms/lasent-wordpress-lost-password-form.php';
 require_once LASENT_DIR . '/forms/lasent-wordpress-registration-form.php';
+require_once LASENT_DIR . '/forms/lasent-booking-activities.php';
 require_once LASENT_DIR . '/forms/lasent-caldera-forms.php';
 require_once LASENT_DIR . '/forms/lasent-contact-form-7.php';
 require_once LASENT_DIR . '/forms/lasent-everest.php';

@@ -26,6 +26,8 @@ $option_names = array(
 		'la_sentinelle-wpregister_blocked',
 		'la_sentinelle-caldera_blocked',
 		'la_sentinelle-cf7_blocked',
+		'la_sentinelle-bookingactivities',
+		'la_sentinelle-bookingactivities_blocked',
 		'la_sentinelle-everest',
 		'la_sentinelle-everest_blocked',
 		'la_sentinelle-formidable',
